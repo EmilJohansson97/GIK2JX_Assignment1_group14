@@ -1,6 +1,6 @@
 var supermarketLayer = L.geoJSON(supermarket, {
   onEachFeature: function (feature, layer) {
-    layer.bindPopup('<p>name: '+feature.properties.name+'</p>');
+    layer.bindPopup('<p>'+feature.properties.name+'</p>');
   }
 }).addTo(map);
 
@@ -22,6 +22,7 @@ function task3() {
       isolatedBuffer = null;
     }
     bufferLayer = null;
+    return;
   } else {
     supermarketLayer.addTo(map);
     bufferLayer = L.geoJSON(buffers, {
@@ -34,7 +35,7 @@ function task3() {
 
   }
 
-  var isolatedBuffer = [];
+  var isolatedFeatures = [];
 
   for (var i = 0; i < buffers.features.length; i++) {
     var buffer = buffers.features[i];
@@ -51,13 +52,13 @@ function task3() {
     }
 
     if (isIsolated) {
-      isolatedBuffer.push(buffer);
+      isolatedFeatures.push(buffer);
     }
 }
-isolatedBuffer = L.geoJSON({
+    isolatedBuffer = L.geoJSON({
     type: 'FeatureCollection',
-    features: isolatedBuffer
-  }, {
+    features: isolatedFeatures
+}, {
     style: {
         color: 'red',
         fillColor: 'red',
