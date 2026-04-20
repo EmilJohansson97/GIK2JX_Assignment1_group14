@@ -12,11 +12,11 @@ var task2 = {
         type: "Polygon",
         coordinates: [
           [
-            [15.417916026183576, 60.48635643440721],
-            [15.435169573490043, 60.48770531048527],
-            [15.434881057844194, 60.48724343050742],
-            [15.434429271164333, 60.48669028530142],
-            [15.430763000000013, 60.48799900000034]
+            [15.417916026183576, 60.48635643440721], //Lion Bar
+            [15.435169573490043, 60.48770531048527], //O´Learys
+            [15.434881057844194, 60.48724343050742], //Pitchers
+            [15.434429271164333, 60.48669028530142], //Lips
+            [15.430763000000013, 60.48799900000034], //Hela huset
           ],
         ],
       },
@@ -33,3 +33,15 @@ function loadTask2() {
 }
 
 document.getElementById("l2").addEventListener("click", loadTask2);
+
+//funkar ej med sidebaren :(
+var sidebar = L.control.sidebar("sidebar", { position: "left" });
+map.addControl(sidebar);
+
+
+sidebar.show();
+
+//funkar inte med overlaybilden heller
+var imageUrl = 'EAE00F5E-15C5-4B3D-B4B4-168E7ECA542D.jpeg',
+    imageBounds = [[60.48575667147429, 15.430637759895228], [60.48525535723287, 15.432145999999994], [60.48492765244402, 15.43164710913806], [60.485400709104034, 15.430161165368544]];
+L.imageOverlay(imageUrl, imageBounds).addTo(map);
