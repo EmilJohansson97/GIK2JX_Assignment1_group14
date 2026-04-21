@@ -34,14 +34,8 @@ function loadTask2() {
 
 document.getElementById("l2").addEventListener("click", loadTask2);
 
-//funkar ej med sidebaren :(
 var sidebar = L.control.sidebar("sidebar", { position: "left" });
 map.addControl(sidebar);
 
 
 sidebar.show();
-
-//funkar inte med overlaybilden heller
-var imageUrl = 'EAE00F5E-15C5-4B3D-B4B4-168E7ECA542D.jpeg',
-    imageBounds = [[60.48575667147429, 15.430637759895228], [60.48525535723287, 15.432145999999994], [60.48492765244402, 15.43164710913806], [60.485400709104034, 15.430161165368544]];
-L.imageOverlay(imageUrl, imageBounds).addTo(map);

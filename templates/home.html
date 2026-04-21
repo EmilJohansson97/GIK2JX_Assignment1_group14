@@ -13,6 +13,10 @@
     />
     <link
       rel="stylesheet"
+      href="https://unpkg.com/leaflet-sidebar@0.2.4/src/L.Control.Sidebar.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css"
     />
     <link
@@ -39,11 +43,15 @@
       <button id="l5">Task 5</button>
       <button id="l6">Task 6</button>
     </div>
+    <div id="sidebar">
+      <h1>leaflet-sidebar</h1>
+    </div>
     <script
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
     ></script>
+    <script src="https://unpkg.com/leaflet-sidebar@0.2.4/src/L.Control.Sidebar.js"></script>
     <script src="{{ url_for('static', filename='map.js') }}"></script>
     <script src="{{ url_for('static', filename='task1.js') }}"></script>
     <script src="{{ url_for('static', filename='task2.js')}}"></script>
