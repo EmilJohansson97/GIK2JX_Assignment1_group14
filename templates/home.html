@@ -11,10 +11,12 @@
       rel="stylesheet"
       href="{{ url_for('static',     filename='template.css') }}"
     />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet-sidebar@0.2.4/src/L.Control.Sidebar.css"
     />
+
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css"
@@ -52,6 +54,7 @@
       crossorigin=""
     ></script>
     <script src="https://unpkg.com/leaflet-sidebar@0.2.4/src/L.Control.Sidebar.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="{{ url_for('static', filename='map.js') }}"></script>
     <script src="{{ url_for('static', filename='task1.js') }}"></script>
     <script src="{{ url_for('static', filename='task2.js')}}"></script>
@@ -63,7 +66,7 @@
 
     <script src="{{ url_for('static', filename='task3.js') }}"></script>
     <script src="{{ url_for('static', filename='fuel.js') }}"></script>
-    <script src="{{ url_for('static', filename='task5.js') }}"></script>
+    <script src="{{ url_for('static', filename='task4.js') }}"></script>
     <script src="{{ url_for('static', filename='task5.js') }}"></script>
     <script src="{{ url_for('static', filename='task6.js') }}"></script>
   </body>
