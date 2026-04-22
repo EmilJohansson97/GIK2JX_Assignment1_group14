@@ -2,31 +2,21 @@
 etc.) using points. Display information like name, location and other information using sidebar
 for each location.*/
 
-document.getElementById("l2").addEventListener("click", loadTask2);
-
-var sidebar = L.control.sidebar("sidebar", { position: "left" });
-map.addControl(sidebar);
-
-function loadTask2() {
-  map.flyTo([60.48636003827599, 15.433643661315159]);
-
-  var lionBarMarker = L.marker([60.4854225179248, 15.432960745367723]).addTo(
-    map,
-  );
-  var olearysMarker = L.marker([60.48770531048527, 15.435169573490043]).addTo(
-    map,
-  );
-  var pitchersMarker = L.marker([60.48724343050742, 15.434881057844194]).addTo(
-    map,
-  );
-  var lipsMarker = L.marker([60.48669028530142, 15.434429271164333]).addTo(map);
-  var helaHusetMarker = L.marker([60.48799900000034, 15.430763000000013]).addTo(
-    map,
-  );
+  var task2Layer = L.layerGroup();
+  var lionBarMarker = L.marker([60.4854225179248, 15.432960745367723]);
+  var olearysMarker = L.marker([60.48770531048527, 15.435169573490043]);
+  var pitchersMarker = L.marker([60.48724343050742, 15.434881057844194]);
+  var lipsMarker = L.marker([60.48669028530142, 15.434429271164333]);
+  var helaHusetMarker = L.marker([60.48799900000034, 15.430763000000013]);
+  task2Layer.addLayer(lionBarMarker);
+  task2Layer.addLayer(olearysMarker);
+  task2Layer.addLayer(pitchersMarker);
+  task2Layer.addLayer(lipsMarker);
+  task2Layer.addLayer(helaHusetMarker);
 
   lionBarMarker.on("click", function () {
     sidebar.setContent(
-      "<h2>Lion Bar</h2> <p> Adress: <br> Borganäsvägen 28, 784 33 Borlänge <p> Öppettider: <br> Måndag:	15-03 <br> Onsdag: 15-03 <br> Torsdag: 15-03 <br> Fredag: 15-03 <br> Lördag: 15-03 <br> Söndag: 15-03 <p> Telefon: 0243-185 00 <br> <img src='/static/lionbar.png'>",
+      "<h2>Lion Bar</h2> <p> Adress: <br> Borganäsvägen 28, 784 33 Borlänge <p> Öppettider: <br> Måndag:	15-03 <br> Onsdag: 15-03 <br> Torsdag: 15-03 <br> Fredag: 15-03 <br> Lördag: 15-03 <br> Söndag: 15-03 <p> Telefon: 0243-185 00 <br>",
     );
     sidebar.show();
   });
@@ -63,6 +53,21 @@ function loadTask2() {
 `);
     sidebar.show();
   });
-}
 
+
+document.getElementById("l2").addEventListener("click", task2);
+
+var sidebar = L.control.sidebar("sidebar", { position: "left" });
+map.addControl(sidebar);
+
+function task2() {
+  map.flyTo([60.48636003827599, 15.433643661315159]);
+
+  if (map.hasLayer(task2Layer)) {
+    map.removeLayer(task2Layer);
+    sidebar.hide();
+  } else {
+    map.addLayer(task2Layer);
+  }
+}
 
