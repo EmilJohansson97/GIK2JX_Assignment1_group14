@@ -1,6 +1,5 @@
 /*Task 4) Use an image to overlay on the basemap. Choose any location in Sweden.*/
 
-//Med hjälp av koden från workshopen och Microsoft Copilot (2026)
 var imageOverlay; 
 var imageUrl = '/static/EAE00F5E-15C5-4B3D-B4B4-168E7ECA542D-removebg-preview.png';
 var task4Layer = L.layerGroup();
