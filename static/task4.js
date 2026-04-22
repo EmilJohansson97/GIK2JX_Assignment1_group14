@@ -17,6 +17,7 @@ imageOverlay = L.imageOverlay(imageUrl, imageBounds);
 task4Layer.addLayer(imageOverlay);
 
 function task4() {
+map.flyTo([60.48636003827599, 15.433643661315159], 17);
     if(map.hasLayer(task4Layer)) {
         map.removeLayer(task4Layer);
     } else { 
