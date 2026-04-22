@@ -1,3 +1,5 @@
+//Task 4) Use an image to overlay on the basemap. Choose any location in Sweden.
+
 //Med hjälp av koden från workshopen och Microsoft Copilot (2026)
 var imageOverlay; 
 

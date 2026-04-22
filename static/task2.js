@@ -2,29 +2,9 @@
 etc.) using points. Display information like name, location and other information using sidebar
 for each location.*/
 
-var task2 = {
-  type: "FeatureCollection",
-  features: [
-    {
-      type: "Feature",
-      properties: {},
-      geometry: {
-        type: "Polygon",
-        coordinates: [
-          [
-            [15.417916026183576, 60.48635643440721], //Lion Bar
-            [15.435169573490043, 60.48770531048527], //O´Learys
-            [15.434881057844194, 60.48724343050742], //Pitchers
-            [15.434429271164333, 60.48669028530142], //Lips
-            [15.430763000000013, 60.48799900000034], //Hela huset
-          ],
-        ],
-      },
-    },
-  ],
-};
-
 function loadTask2() {
+   map.flyTo([ 60.48636003827599, 15.433643661315159]);
+
   var lionBarMarker = L.marker([60.4854225179248, 15.432960745367723]).addTo(map);
   var olearysMarker = L.marker([60.48770531048527, 15.435169573490043]).addTo(map);
   var pitchersMarker = L.marker([60.48724343050742, 15.434881057844194]).addTo(map);
