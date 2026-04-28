@@ -66,7 +66,7 @@ var avicii = L.polygon(
     [59.29407411054201, 18.08239952789933],
     [59.29408095864791, 18.08239416348131],
   ],
-  { color: "darkblue", weight: 5, fillColor: "#0080ff", fiilOpacity: 0.5 },
+  { color: "darkblue", weight: 5, fillColor: "#0080ff", fillOpacity: 0.5 },
 );
 task1Layers.addLayer(avicii);
 
