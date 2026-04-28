@@ -10,8 +10,6 @@ var isolatedBuffer = null;
 document.getElementById("l3").addEventListener("click", task3);
 
 function task3() {
-  map.flyTo([59.856507200368725, 17.646067931577022], 8);
-
   var buffers = turf.buffer(supermarket, 1, { units: "kilometers" });
 
   if (bufferLayer && map.hasLayer(bufferLayer)) {
@@ -24,6 +22,8 @@ function task3() {
     bufferLayer = null;
     return;
   } else {
+    map.flyTo([59.856507200368725, 17.646067931577022], 8);
+
     supermarketLayer.addTo(map);
     bufferLayer = L.geoJSON(buffers, {
       style: {
@@ -33,7 +33,7 @@ function task3() {
       },
     }).addTo(map);
   }
-
+  // Lösning för att hitta isolerade buffertar genererad av ChatGPT
   var isolatedFeatures = [];
 
   for (var i = 0; i < buffers.features.length; i++) {
